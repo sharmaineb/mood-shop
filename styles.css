@@ -23,4 +23,7 @@ body {
     display: block;
     padding: 0.5em;
     text-decoration: none;
+    background-color: aquamarine;
+    font-family: Helvetica;
+    font-size: 15px;
 }
