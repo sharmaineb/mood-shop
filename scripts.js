@@ -4,6 +4,27 @@ const itemsContainer = document.querySelector('#items')
 const itemList = document.getElementById("item-list")
 const cartQty = document.getElementById("cart-qty")
 const cartTotal = document.getElementById("cart-total")
+const cart = []
+
+
+function addItem(name, price) {
+    const item = { name:name, price:price, qty: 1 }
+    cart.push(item)
+
+}
+
+function showItems() {
+    console.log(`You have ${cart.length} items in your cart`)
+
+
+}
+
+addItem("Apple", 0.99)
+addItem("Orange", 1.29)
+addItem("Opinion", 0.02)
+addItem("Frisbee", 9.92)
+
+showItems()
 
 for (let i = 0; i < data.length; i += 1) {
     // create a new div element and give it a class name
