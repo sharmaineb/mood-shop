@@ -86,13 +86,13 @@ function removeItem(name, qty = 0) { // qty of items to remove
 
 
 // ---------------------------------------------
-addItem("Apple", 0.99)
-addItem("Apple", 0.99)
-addItem("Orange", 1.29)
-addItem("Opinion", 0.02)
-addItem("Orange", 1.29)
-addItem("Apple", 0.99)
-addItem("Frisbee", 9.92)
+// addItem("Apple", 0.99)
+// addItem("Apple", 0.99)
+// addItem("Orange", 1.29)
+// addItem("Opinion", 0.02)
+// addItem("Orange", 1.29)
+// addItem("Apple", 0.99)
+// addItem("Frisbee", 9.92)
 
 showItems()
 
@@ -136,3 +136,11 @@ for (let i = 0; i < data.length; i += 1) {
 
 }
 
+// Connect Add to Cart Button with Shopping Cart 
+// Use querySelectorAllfunction
+const all_items_button = Array.from(document.querySelectorAll("button"))
+console.log(all_items_button)
+all_items_button.forEach(elt => elt.addEventListener("click", () => {
+    addItem(elt.getAttribute("id"), elt.getAttribute("data-price"))
+    showItems()
+}))
