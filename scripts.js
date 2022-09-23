@@ -6,7 +6,8 @@ const cartQty = document.getElementById("cart-qty")
 const cartTotal = document.getElementById("cart-total")
 const cart = []
 
-
+// ---------------------------------------------
+// Add Item
 function addItem(name, price) {
     for(let i = 0; i < cart.length; i += 1) {
         if (cart[i].name === name) {
@@ -21,6 +22,7 @@ function addItem(name, price) {
 
 }
 
+// ---------------------------------------------
 // Show Items
 function showItems() {
     const qty = getQty()
@@ -34,6 +36,7 @@ function showItems() {
 
 }
 
+// ---------------------------------------------
 // Get Qty
 function getQty() {
     let qty = 0
@@ -43,6 +46,7 @@ function getQty() {
     return qty
 }
 
+// ---------------------------------------------
 // Get Total
 function getTotal() {
     let total = 0
@@ -52,6 +56,24 @@ function getTotal() {
     return total.toFixed(2)
 }
 
+// ---------------------------------------------
+// Remove Item
+function removeItem(name, qty = 0) { // qty of items to remove
+    for (let i = 0; i < cart.length; i += 1) {
+        if (cart[i].name === name) {
+            if (qty > 0) {
+                cart[i].qty -= qty
+            }
+            if (cart[i].qty < 1 || qty === 0) { // ||: or
+                cart.splice(i, 1)
+            }
+            return
+        }
+    }
+}
+
+
+// ---------------------------------------------
 addItem("Apple", 0.99)
 addItem("Apple", 0.99)
 addItem("Orange", 1.29)
@@ -59,6 +81,11 @@ addItem("Opinion", 0.02)
 addItem("Orange", 1.29)
 addItem("Apple", 0.99)
 addItem("Frisbee", 9.92)
+
+showItems()
+
+removeItem("Apple", 1)
+removeItem("Frisbee")
 
 showItems()
 
