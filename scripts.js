@@ -2,10 +2,46 @@ import data from './data.js'
 
 const itemsContainer = document.querySelector('#items')
 const itemList = document.getElementById("item-list")
-// console.log(itemList)
 const cartQty = document.getElementById("cart-qty")
 const cartTotal = document.getElementById("cart-total")
 const cart = []
+
+// ---------------------------------------------
+// handle change events on update input
+itemList.onchange = function(e) {
+    if (e.target && e.target.classList.contains("update")) {
+        // console.log(e.target)
+        const name = e.target.dataset.name
+        const qty = parseInt(e.target.value)
+        updateCart(name, qty)
+    }
+}
+
+// ---------------------------------------------
+// Handle clicks on list
+itemList.onclick = function(e) {
+    // console.log("Clicked List!!!")
+    // console.log(e.target)
+    if (e.target && e.target.classList.contains("remove")) {
+        const name = e.target.dataset.name // data-name="..."
+        removeItem(name)
+    } else if (e.target && e.target.classList.contains("add-one")) {
+        const name = e.target.dataset.name
+        addItem(name)
+    } else if (e.target && e.target.classList.contains("remove-one")) {
+        const name = e.target.dataset.name
+        removeItem(name, 1)
+    }
+}
+
+// ---------------------------------------------
+// handle add form submit
+itemList.onsubmit = function(e) {
+    e.preventDefault()
+    const name = itemName.value
+    const price = itemPrice.value
+    addItem(name, price)
+}
 
 // ---------------------------------------------
 // Add Item
@@ -39,7 +75,13 @@ function showItems() {
         // {name: "Apple", price: 0.99, qty: 3}
         const {name, price, qty} = cart[i]
 
-        itemStr += `<li>${name} $${price} x ${qty} = ${qty * price}</li>`
+        itemStr += `<li>
+        ${name} $${price} x ${qty} = ${qty * price} 
+        <button class="remove" data-name="${name}">Remove</button>
+        <button class="add-one" data-name="${name}"> + </button>
+        <button class="remove-one" data-name="${name}"> - </button>
+        <input class="update" type="number" data-name="${name}">
+        </li>`
     }
     itemList.innerHTML = itemStr
 
@@ -79,6 +121,22 @@ function removeItem(name, qty = 0) { // qty of items to remove
             if (cart[i].qty < 1 || qty === 0) { // ||: or
                 cart.splice(i, 1)
             }
+            showItems()
+            return
+        }
+    }
+}
+
+// ---------------------------------------------
+function updateCart(name, qty) {
+    for (let i = 0; i < cart.length; i += 1) {
+        if (cart[i].name === name) {
+            if (qty < 1) {
+                removeItem(name)
+                return
+            }
+            cart[i].qty = qty
+            showItems()
             return
         }
     }
