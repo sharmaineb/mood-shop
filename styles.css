@@ -2,26 +2,47 @@ body {
     font-family: Helvetica;
     font-size: 16px;
     line-height: 1.5;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+}
+
+h4 {
+    stroke-width: 0.05;
+    position: relative;
+    display: inline-block;
+    font-size: x-large;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: medium;
+    white-space: nowrap;
+
+    text-shadow: green;
+
 }
 
 .page-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #957dad;
-    margin: 0.5em;
-}
+    background-color: #BECAD3;
+    margin: 0.3em;
+   }
 
 .page-header ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+    padding: 0.5em;
 }
 
 .page-header a {
-    display: block;
+    display: inline-block;
     padding: 0.5em;
     text-decoration: none;
     background-color: rgb(98, 166, 191);
@@ -42,4 +63,17 @@ body {
     width: 100%;
     height: auto;
     
+}
+
+.button {
+    background-color: #fbeee0;
+    color: #422800;
+    padding: 0 18px;
+    box-shadow: #422800 3px 3px 0 0;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }

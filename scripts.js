@@ -49,6 +49,7 @@ function addItem(name, price) {
     for(let i = 0; i < cart.length; i += 1) {
         if (cart[i].name === name) {
             cart[i].qty += 1
+            showItems()
             return
         } 
 
