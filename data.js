@@ -2,7 +2,7 @@ const data = [{
   "id": 1,
   "name": "happy",
   "image": "images/bts.gif",
-  "desc": "Be happy. It really annoys negative people",
+  "desc": "Be happy. It really annoys negative people.",
   "price": 5.99
 }, {
   "id": 2,
