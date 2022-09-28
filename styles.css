@@ -1,35 +1,32 @@
+html {
+    scroll-behavior: smooth;
+    height: auto;
+}
+
 body {
-    font-family: Helvetica;
-    font-size: 16px;
+    font-family: Roboto;
+    font-size: 17px;
     line-height: 1.5;
     margin-left: auto;
     margin-right: auto;
-    background: #fff;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #fafbfb;
+    justify-content: center;
 }
 
-h4 {
-    stroke-width: 0.05;
-    position: relative;
-    display: inline-block;
-    font-size: x-large;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    font-style: italic;
-    color: white;
-    -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: medium;
-    white-space: nowrap;
-
-    text-shadow: green;
-
+.page-header h4 {
+    font-family: Helvetica;
+    font-size: 2em;
+    color: #F1D31F;
+    text-shadow: white;
 }
 
 .page-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #BECAD3;
+    background-color: rgb(48, 101, 102);
     margin: 0.3em;
    }
 
@@ -38,16 +35,17 @@ h4 {
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
-    padding: 0.5em;
+    margin: 3.3em;
 }
 
 .page-header a {
     display: inline-block;
     padding: 0.5em;
     text-decoration: none;
-    background-color: rgb(98, 166, 191);
-    font-family: Helvetica;
-    font-size: 15px;
+    background-color: rgb(137, 176, 155);
+    font-family: Roboto;
+    font-size: 18px;
+    color: black;
 }
 
 .items {
@@ -65,15 +63,62 @@ h4 {
     
 }
 
-.button {
-    background-color: #fbeee0;
-    color: #422800;
-    padding: 0 18px;
-    box-shadow: #422800 3px 3px 0 0;
-    font-weight: 400;
-    font-size: 15px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
+button {
+    color: white;
+    background-color: rgb(48, 101, 102);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px;
+    padding: 10px;
+    align-items: center;
 }
+
+.item {
+    border: black;
+    margin: auto;
+    border-style: dashed solid;
+    border-radius: 7px;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    box-shadow: 0.1em 5px 5px #F1D31F;
+}
+
+#item-list {
+    list-style: none;
+}
+
+a:link {
+    font-weight: bold;
+    color: rgb(154, 139, 201);
+}
+a:visited {
+    color: #F1D31F;
+}
+a:hover {
+    color: whitesmoke;
+}
+
+footer {
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+}
+
+#cart-total {
+    color: #F1D31F;
+    background-color: rgb(48, 101, 102);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px;
+    padding: 10px;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
